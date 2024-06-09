@@ -1,0 +1,43 @@
+.meal {
+    width: 100%;
+    height: 500px;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.meal__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal__heading {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.meal__name {
+    font-size: 44px;
+    text-decoration: none;
+    color: #d49726;
+    margin: 1.5rem 0;
+}
+
+.meal__media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.meal__img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    margin-left: 7rem;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 10px 12px 29px -14px rgba(0,0,0,.75);
+}

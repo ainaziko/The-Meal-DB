@@ -1,0 +1,83 @@
+.meal {
+    width: 100%;
+    height: 500px;
+    margin-top: 4rem;
+}
+
+.meal__info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.meal__info_general {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal__ingredients {
+    font-size: large;
+    margin-left: 10%;
+    margin-top: 2rem;
+}
+
+.measure {
+    font-weight: bold;
+}
+
+.mealInstructions {
+    padding: 1rem;
+    margin: 0 3rem;
+}
+
+.btnYoutube {
+    border: none;
+    height: 2rem;
+    margin: 1rem 0 5rem 0;
+    background-color: red;
+    border-radius: 3px;
+}
+
+.btnYoutube a {
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mealInstructions__heading {
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.meal__heading {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.meal__name {
+    font-size: 44px;
+    text-decoration: none;
+    color: #d49726;
+    margin: 1.5rem 0;
+}
+
+.meal__media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.meal__img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    margin-left: 7rem;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 10px 12px 29px -14px rgba(0,0,0,.75);
+}
