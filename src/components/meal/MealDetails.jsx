@@ -1,40 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
 import classes from './MealDetails.module.css'
 import { useParams  } from "react-router-dom";
- 
+
+const src = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 
 const MealDetails = () => {
-    const {id} = useParams();
+    const {idMeal} = useParams();
+    const [meal, setMeal] = useState(null);
+
+    useEffect(() => {
+        axios
+        .get(`${src}${idMeal}`) 
+        .then(response => {
+            
+            console.log(response.data.meals[0]);
+            if(response.data.meals[0] !== null) {
+                setMeal(response.data.meals[0]);
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }, [idMeal])
+
+    if (!meal) {
+        return <p>Loading...</p>;
+    }
+
+    function getIngredients(meal) {
+        return Object.keys(meal)
+          .filter((key) => key.startsWith("strIngredient"))
+          .reduce((el, key, index) => {
+            const ingredient = meal[key];
+            const measure = meal["strMeasure" + (index + 1)];
+            if (ingredient) {
+              el.push(
+                <li key={index}>
+                  {ingredient} <span className={classes.measure}>{measure}</span>
+                </li>
+              );
+            }
+            return el;
+          }, []);
+      }
+
     return (
         <section className={classes.meal}>
-            <p>{id}</p>
             <div className={classes.meal__info}>
                 <div className={classes.meal__info__txt}>
                     <div className={classes.meal__info_general}>
                         <p className={classes.meal__heading}></p>
-                        <a className={classes.meal__name} href="">Beef Rendang</a>
+                        <a className={classes.meal__name} href="">{meal.strMeal}</a>
                         <p>
-                            <span className={classes.meal__category}>Beef</span> | <span className={classes.meal__area}>Malaysian</span>
+                            <span className={classes.meal__category}>{meal.strCategory}</span> | <span className={classes.meal__area}>{meal.strArea}</span>
                         </p>
                     </div>
                     <ul className={classes.meal__ingredients}>
-                        <li> Beef <span className={classes.measure}>1lb</span></li>
-                        <li>Vegetable Oil <span className={classes.measure}>5 tbs</span></li>
-                        <li>Cinnamon Stick <span className={classes.measure}>1</span></li>
-                        <li>Cloves <span className={classes.measure}>3</span></li>
+                       {getIngredients(meal)}
                     </ul>
                 </div>
                 <div className={classes.meal__media}>
-                    <img className={classes.meal__img} src='https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg' alt='Beef Rendang'/>
+                    <img className={classes.meal__img} src={meal.strMealThumb} alt='Beef Rendang'/>
                 </div>
             </div>
 
             <div className={classes.mealInstructions}>
                 <p className={classes.mealInstructions__heading}>Instruction</p>
-                <p className={classes.mealInstructionTxt}>Chop the spice paste ingredients and then blend it in a food processor until fine.
- Heat the oil in a stew pot, add the spice paste, cinnamon, cloves, star anise, and cardamom and stir-fry until aromatic. Add the beef and the pounded lemongrass and stir for 1 minute. Add the coconut milk, tamarind juice, water, and simmer on medium heat, stirring frequently until the meat is almost cooked. Add the kaffir lime leaves, kerisik (toasted coconut), sugar or palm sugar, stirring to blend well with the meat.
- Lower the heat to low, cover the lid, and simmer for 1 to 1 1/2 hours or until the meat is really tender and the gravy has dried up. Add more salt and sugar to taste. Serve immediately with steamed rice and save some for overnight.'</p>
-                <button className={classes.btnYoutube}><a href='https://www.youtube.com/watch?v=Ot-dmfBaZrA'>Watch on YouTube</a></button>
+                <p className={classes.mealInstructionTxt}>{meal.strInstructions}</p>
+                <button className={classes.btnYoutube}><a href={meal.strYoutube}>Watch on YouTube</a></button>
             </div>
             
         </section>

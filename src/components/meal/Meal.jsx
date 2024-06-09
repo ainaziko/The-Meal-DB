@@ -13,7 +13,7 @@ const Meal = ({ headingTxt }) => {
         .get(src) 
         .then(response => {
             setMeal(response.data.meals[0]);
-            console.log(response.data.meals[0]);
+
         })
         .catch(error => console.error('Error fetching data:', error));
     }, [])
@@ -26,7 +26,7 @@ const Meal = ({ headingTxt }) => {
         <section className={classes.meal}>
             <div className={classes.meal__info}>
                 <p className={classes.meal__heading}>{headingTxt}</p>
-                <Link className={classes.meal__name} key={meal.mealId} to={'/${meal.mealId}'}>{meal.strMeal}</Link>
+                <Link className={classes.meal__name} key={meal.mealId} to={`/meal/${meal.idMeal}`}>{meal.strMeal}</Link>
                 <p>
                     <span className={classes.meal__category}>{meal.strCategory}</span> | <span className={classes.meal__area}>{meal.strArea}</span>
                 </p>
