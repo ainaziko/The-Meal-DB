@@ -1,0 +1,34 @@
+.searchForm {
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchHeading {
+    margin-bottom: 1rem;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.searchField {
+    border-radius: 3px;
+    height: 46px;
+    width: 360px;
+}
+
+.searchInput {
+    width: 260px;
+    height: 100%;
+    padding-left: 1rem;
+    background-color: #dcdcdc;
+    border: none;
+}
+
+.searchInput:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
