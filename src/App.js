@@ -4,23 +4,18 @@ import Navbar from './components/navbar/Navbar'
 import Meal from './components/meal/Meal';
 import MealDetails from './components/meal/MealDetails'
 import SearchForm from './components/search/SearchForm'
+import React from 'react';
+import {Routes, Route, Link} from 'react-router-dom'
+import Main from './components/Main'
 
 function App() {
   return (
     <div className="app">
-      <Navbar/>
-      <Meal
-        headingTxt={'Meal of The Day'}
-        mealName={'Gołąbki'} 
-        mealCategory={'Polish'} 
-        mealArea={'Europe'} 
-        mealImgUrl={'https://www.themealdb.com/images/media/meals/q8sp3j1593349686.jpg'}
-      />
-      <SearchForm
-        heading={'Find your Meal'}
-        placeholder={'Find your meal'}
-      />
-      <MealDetails/>
+
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+        <Route path='/:idMeal' element={<MealDetails/>}/>
+      </Routes>
     </div>
   );
 }

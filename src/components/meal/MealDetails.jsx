@@ -1,11 +1,13 @@
 import React from "react";
 import classes from './MealDetails.module.css'
-
+import { useParams  } from "react-router-dom";
+ 
 
 const MealDetails = () => {
+    const {id} = useParams();
     return (
         <section className={classes.meal}>
-            
+            <p>{id}</p>
             <div className={classes.meal__info}>
                 <div className={classes.meal__info__txt}>
                     <div className={classes.meal__info_general}>
