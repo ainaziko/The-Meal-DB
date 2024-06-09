@@ -2,6 +2,7 @@ import './styles/reset.css'
 import './styles/index.css';
 import Navbar from './components/navbar/Navbar'
 import Meal from './components/meal/Meal';
+import MealDetails from './components/meal/MealDetails'
 import SearchForm from './components/search/SearchForm'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         heading={'Find your Meal'}
         placeholder={'Find your meal'}
       />
+      <MealDetails/>
     </div>
   );
 }
