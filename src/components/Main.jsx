@@ -1,10 +1,12 @@
-import React from "react";
-import Navbar from './navbar/Navbar'
+import React, { useState } from "react";
 import Meal from './meal/Meal';
 import SearchForm from './search/SearchForm'
+import { SearchResultsList } from "./search/SearchResultList";
 
 
 const Main = () => {
+    const [meals, setMeals] = useState([]);
+
     return (
        <>
         <Meal
@@ -14,12 +16,11 @@ const Main = () => {
             mealArea={'Europe'} 
             mealImgUrl={'https://www.themealdb.com/images/media/meals/q8sp3j1593349686.jpg'}
         />
-        <SearchForm
-            heading={'Find your Meal'}
-            placeholder={'Find your meal'}
-        />
+        <SearchForm setMeals={setMeals} />
+            {meals && meals.length > 0 && <SearchResultsList meals={meals} 
+        />}
        </>
-    )
+    );
 }
 
 export default Main;
