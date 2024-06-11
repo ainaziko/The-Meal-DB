@@ -19,7 +19,7 @@ const Meal = ({ headingTxt }) => {
     }, [])
  
     if (!meal) {
-        return <p>Loading...</p>;
+        return <p></p>;
     }
     
     return (
