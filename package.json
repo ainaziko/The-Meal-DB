@@ -1,7 +1,7 @@
 {
   "name": "themealdb",
   "version": "0.1.0",
-  "homepage": "https://ainaziko.github.io/themealdb",
+  "homepage": "https://ainaziko.github.io/The-Meal-DB",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
