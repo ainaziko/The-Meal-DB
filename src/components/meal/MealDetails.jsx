@@ -13,17 +13,13 @@ const MealDetails = () => {
         axios
         .get(`${src}${idMeal}`) 
         .then(response => {
-            
-            console.log(response.data.meals[0]);
-            if(response.data.meals[0] !== null) {
-                setMeal(response.data.meals[0]);
-            }
+            setMeal(response.data.meals[0]);
         })
         .catch(error => console.error('Error fetching data:', error));
     }, [idMeal])
 
     if (!meal) {
-        return <p>Loading...</p>;
+        return <p></p>;
     }
 
     function getIngredients(meal) {

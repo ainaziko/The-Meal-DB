@@ -1,11 +1,12 @@
 import React from "react";
 import classes from './Navbar.module.css'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
     return (
         <nav className={classes.navbar}>
-          <a href="/" className={classes.siteTitle}>The Meal</a>
+          <Link className={classes.siteTitle} to={'/'}>The Meal</Link>
         </nav>
     )
 };

@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="app">
 
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/meal/:idMeal' element={<MealDetails/>}/>

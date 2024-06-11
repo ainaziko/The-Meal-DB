@@ -7,7 +7,6 @@ import SearchForm from './search/SearchForm'
 const Main = () => {
     return (
        <>
-        <Navbar/>
         <Meal
             headingTxt={'Meal of The Day'}
             mealName={'Gołąbki'} 
