@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/themealdb/static/css/main.42b56423.css",
-    "main.js": "/themealdb/static/js/main.db7e515d.js",
-    "index.html": "/themealdb/index.html",
-    "main.42b56423.css.map": "/themealdb/static/css/main.42b56423.css.map",
-    "main.db7e515d.js.map": "/themealdb/static/js/main.db7e515d.js.map"
+    "main.css": "/The-Meal-DB/static/css/main.42b56423.css",
+    "main.js": "/The-Meal-DB/static/js/main.db7e515d.js",
+    "index.html": "/The-Meal-DB/index.html",
+    "main.42b56423.css.map": "/The-Meal-DB/static/css/main.42b56423.css.map",
+    "main.db7e515d.js.map": "/The-Meal-DB/static/js/main.db7e515d.js.map"
   },
   "entrypoints": [
     "static/css/main.42b56423.css",
