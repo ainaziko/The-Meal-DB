@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/themealdb/static/css/main.42b56423.css",
+    "main.js": "/themealdb/static/js/main.db7e515d.js",
+    "index.html": "/themealdb/index.html",
+    "main.42b56423.css.map": "/themealdb/static/css/main.42b56423.css.map",
+    "main.db7e515d.js.map": "/themealdb/static/js/main.db7e515d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42b56423.css",
+    "static/js/main.db7e515d.js"
+  ]
+}
