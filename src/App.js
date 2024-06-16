@@ -3,7 +3,7 @@ import './styles/index.css';
 import Navbar from './components/navbar/Navbar'
 import MealDetails from './components/meal/MealDetails'
 import React from 'react';
-import {Routes, Route, Link} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Main from './components/Main'
 
 function App() {
