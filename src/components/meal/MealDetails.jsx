@@ -45,7 +45,7 @@ const MealDetails = () => {
                 <div className={classes.meal__info__txt}>
                     <div className={classes.meal__info_general}>
                         <p className={classes.meal__heading}></p>
-                        <a className={classes.meal__name} href="">{meal.strMeal}</a>
+                        <p className={classes.meal__name}>{meal.strMeal}</p>
                         <p>
                             <span className={classes.meal__category}>{meal.strCategory}</span> | <span className={classes.meal__area}>{meal.strArea}</span>
                         </p>
@@ -55,7 +55,7 @@ const MealDetails = () => {
                     </ul>
                 </div>
                 <div className={classes.meal__media}>
-                    <img className={classes.meal__img} src={meal.strMealThumb} alt='Beef Rendang'/>
+                    <img className={classes.meal__img} src={meal.strMealThumb} alt='food img'/>
                 </div>
             </div>
 
